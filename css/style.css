@@ -1,0 +1,177 @@
+body, html {
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  width: 608px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-right: 8px;
+  margin-bottom: 8px;
+}
+.navbar__tab {
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(254, 82, 12);
+}
+.navbar__tab--active {
+  color: rgb(191, 202, 221);
+}
+@media (max-width: 600px) {
+  .navbar {
+    width: 314px;
+  }
+}
+
+.buy-fonts-card {
+  width: 608px;
+  height: 294px;
+  border: 2px solid rgb(191, 201, 221);
+  padding: 46px 43px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: none;
+  place-items: center;
+}
+.buy-fonts-card--active {
+  display: grid;
+}
+@media (max-width: 600px) {
+  .buy-fonts-card {
+    width: 325px;
+    height: 470px;
+    border: 2px solid rgb(191, 201, 221);
+    padding: 46px 43px;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+}
+
+.card {
+  width: 608px;
+  height: 294px;
+  border: 2px solid rgb(191, 201, 221);
+  padding: 46px 43px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: none;
+  gap: 76px;
+}
+@media (max-width: 600px) {
+  .card {
+    width: 325px;
+    height: auto;
+    border: 2px solid rgb(191, 201, 221);
+    padding: 46px 43px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 30px;
+    padding: 24px 16px;
+  }
+}
+.card__font-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .card__font-list {
+    gap: 24px;
+  }
+}
+.card--active {
+  display: flex;
+}
+
+.font {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+}
+.font--featured {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .font--featured {
+    align-items: center;
+  }
+}
+.font__input {
+  display: none;
+}
+.font__input:checked ~ .font__square {
+  opacity: 50%;
+}
+.font__input:checked ~ .font__description {
+  opacity: 50%;
+}
+.font__square {
+  border: 3px solid rgb(255, 255, 255);
+  outline: 1px solid black;
+  position: relative;
+  user-select: none;
+  border-radius: 12px;
+  height: 75px;
+  width: 75px;
+  background: var(--bg-color, #000);
+}
+.font__square--featured {
+  border: 3px solid rgb(255, 255, 255);
+  outline: 1px solid black;
+  position: relative;
+  user-select: none;
+  border-radius: 12px;
+  height: 104px;
+  width: 104px;
+}
+.font__char {
+  position: absolute;
+  margin: 0;
+  left: 8px;
+  bottom: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+}
+.font__char--featured {
+  font-size: 2rem;
+}
+.font__description {
+  display: flex;
+  gap: 8px;
+}
+.font__dot {
+  margin-top: 0.5rem;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: gray;
+}
+.font__text {
+  margin: 0;
+  line-height: 24px;
+  max-width: 165px;
+  hyphens: auto;
+}
+.font__text--featured {
+  max-width: 135px;
+}
+
+/*# sourceMappingURL=style.css.map */

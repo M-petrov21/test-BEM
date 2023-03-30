@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>test</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="#" id="my fonts" class="navbar__tab navbar__tab--active">my fonts</a>
+    <a href="#" id="buy fonts" class="navbar__tab">buy fonts</a>
+</nav>
+
+<section id="buy-fonts-card" class="buy-fonts-card buy-fonts-card--active">
+    <p>
+        It is a long established fact that a reader will be distracted
+        by the readable content of a page when looking at its layout.
+        The point of using Lorem Ipsum is that it has a more-or-less
+        normal distribution of letters, as opposed to using
+        'Content here
+    </p>
+</section>
+
+<section  id="my-fonts-card" class="card">
+
+    <label class="font font--featured">
+        <input type="radio" name="font" class="font__input" checked/>
+        <div class="font__square font__square--featured" style="--bg-color: rgb(0,166,82)">
+            <p class="font__char font__char--featured">M</p>
+        </div>
+        <div class="font__description">
+            <div class="font__dot"></div>
+            <p class="font__text font__text--featured">Merriweather project is led by Sorkin Type</p>
+        </div>
+    </label>
+
+    <div class="card__font-list">
+
+        <label class="font">
+            <input type="radio" name="font" class="font__input"/>
+            <div class="font__square" style="--bg-color: rgb(246, 3, 131)">
+                <p class="font__char">R</p>
+            </div>
+            <div class="font__description">
+                <div class="font__dot"></div>
+                <p class="font__text">Roboto doesn't compromise, allowing letters</p>
+            </div>
+        </label>
+
+
+        <label class="font">
+            <input type="radio" name="font" class="font__input"/>
+            <div class="font__square" style="--bg-color: rgb(0,109,254)">
+                <p class="font__char">NS</p>
+            </div>
+            <div class="font__description">
+                <div class="font__dot"></div>
+                <p class="font__text">Noto Sans covers over 30 scripts</p>
+            </div>
+        </label>
+    </div>
+</section>
+
+<script src="index.js"></script>
+</body>
+</html>

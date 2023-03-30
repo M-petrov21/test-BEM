@@ -1,0 +1,184 @@
+@mixin font-icon ($h: 75px, $w: 75px) {
+  border: 3px solid rgb(255, 255, 255);
+  outline: 1px solid black;
+  position: relative;
+  user-select: none;
+  border-radius: 12px;
+  height: $h;
+  width: $w;
+}
+
+@mixin tab ($h: 294px, $w: 608px) {
+  width: $w;
+  height: $h;
+  border: 2px solid rgb(191,201,221);
+  padding: 46px 43px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+@mixin font-name {
+  position: absolute;
+  margin: 0;
+  left: 8px;
+  bottom: 8px;
+  color: rgb(255, 255, 255, 0.5);
+}
+
+@mixin phone-only {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+body, html {
+  margin: 0
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+  width: 608px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-right: 8px;
+  margin-bottom: 8px;
+
+  &__tab {
+    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(254,82,12);
+
+    &--active {
+      color: rgb(191,202,221);
+    }
+  }
+
+  @include phone-only {
+    width: 314px;
+  }
+}
+
+.buy-fonts-card {
+  @include tab;
+  display: none;
+  place-items: center;
+
+  &--active {
+    display: grid;
+  }
+
+  @include phone-only {
+    @include tab(470px, 325px);
+  }
+}
+
+.card {
+  @include tab();
+  display: none;
+  gap: 76px;
+
+  @include phone-only {
+    @include tab(auto, 325px);
+    flex-direction: column;
+    gap: 30px;
+    padding: 24px 16px;
+  }
+
+  &__font-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include phone-only {
+      gap: 24px
+    }
+  }
+
+  &--active{
+    display: flex;
+  }
+}
+
+.font{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+
+  &--featured {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+
+    @include phone-only {
+      align-items: center;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked ~ .font__square {
+      opacity: 50%;
+    }
+
+    &:checked ~ .font__description {
+      opacity: 50%;
+    }
+  }
+
+  &__square{
+    @include font-icon();
+    background: var(--bg-color, #000);
+
+    &--featured {
+      @include font-icon(104px, 104px)
+    }
+  }
+
+  &__char {
+    @include font-name;
+    font-size: 1.25rem;
+
+    &--featured {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__dot {
+    margin-top: 0.5rem;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: gray;
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 24px;
+    max-width: 165px;
+    hyphens: auto;
+
+    &--featured {
+      max-width: 135px;
+    }
+  }
+}
